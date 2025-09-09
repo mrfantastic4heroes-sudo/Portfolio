@@ -78,15 +78,43 @@ class Portfolio(BaseModel):
 
 class ContactMessage(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-    name: str
-    email: str
-    subject: str
-    message: str
+    name: str = Field(..., min_length=1, max_length=100)
+    email: str = Field(..., min_length=1)
+    subject: str = Field(..., min_length=1, max_length=200)
+    message: str = Field(..., min_length=1, max_length=1000)
     created_at: datetime = Field(default_factory=datetime.utcnow)
     read: bool = False
+    
+    @validator('email')
+    def validate_email(cls, v):
+        if not v or not v.strip():
+            raise ValueError('Email cannot be empty')
+        if '@' not in v:
+            raise ValueError('Invalid email format')
+        return v.strip()
+    
+    @validator('name', 'subject', 'message')
+    def validate_not_empty(cls, v):
+        if not v or not v.strip():
+            raise ValueError('Field cannot be empty')
+        return v.strip()
 
 class ContactMessageCreate(BaseModel):
-    name: str
-    email: str
-    subject: str
-    message: str
+    name: str = Field(..., min_length=1, max_length=100)
+    email: str = Field(..., min_length=1)
+    subject: str = Field(..., min_length=1, max_length=200)
+    message: str = Field(..., min_length=1, max_length=1000)
+    
+    @validator('email')
+    def validate_email(cls, v):
+        if not v or not v.strip():
+            raise ValueError('Email cannot be empty')
+        if '@' not in v:
+            raise ValueError('Invalid email format')
+        return v.strip()
+    
+    @validator('name', 'subject', 'message')
+    def validate_not_empty(cls, v):
+        if not v or not v.strip():
+            raise ValueError('Field cannot be empty')
+        return v.strip()
