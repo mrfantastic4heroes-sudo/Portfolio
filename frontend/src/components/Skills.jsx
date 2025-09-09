@@ -24,10 +24,10 @@ const Skills = ({ data }) => {
       skills: data?.technical?.filter(skill => skill.category === 'AI/ML') || []
     },
     {
-      title: 'Web Development',
+      title: 'Data Visualization',
       icon: Lightbulb,
       color: 'green',
-      skills: data?.technical?.filter(skill => skill.category === 'Web Development') || []
+      skills: data?.technical?.filter(skill => skill.category === 'Data Visualization') || []
     }
   ];
 
