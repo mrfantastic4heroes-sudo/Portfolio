@@ -7,6 +7,7 @@ import Experience from './Experience';
 import Projects from './Projects';
 import Contact from './Contact';
 import Footer from './Footer';
+import { InteractiveBackground, FloatingElements, injectFloatingStyles } from './InteractiveBackground';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -18,6 +19,9 @@ const Portfolio = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // Inject floating animation styles
+    injectFloatingStyles();
+    
     const loadData = async () => {
       setIsLoading(true);
       try {
@@ -37,10 +41,12 @@ const Portfolio = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
-        <div className="text-center">
+      <div className="min-h-screen bg-gray-900 flex items-center justify-center relative">
+        <InteractiveBackground />
+        <div className="text-center relative z-10">
           <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-blue-500 mx-auto mb-4"></div>
-          <p className="text-gray-300 text-lg">Loading portfolio...</p>
+          <p className="text-gray-300 text-lg heading-font">Loading portfolio...</p>
+          <p className="text-gray-500 text-sm mt-2 body-font">Preparing an amazing experience...</p>
         </div>
       </div>
     );
@@ -48,12 +54,14 @@ const Portfolio = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-red-400 text-lg mb-4">{error}</p>
+      <div className="min-h-screen bg-gray-900 flex items-center justify-center relative">
+        <InteractiveBackground />
+        <div className="text-center relative z-10">
+          <div className="text-red-400 text-6xl mb-4">⚠️</div>
+          <p className="text-red-400 text-lg mb-4 heading-font">{error}</p>
           <button 
             onClick={() => window.location.reload()} 
-            className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-lg transition-colors duration-300"
+            className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-lg transition-colors duration-300 body-font"
           >
             Retry
           </button>
@@ -63,17 +71,21 @@ const Portfolio = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      <Header />
-      <main>
-        <Hero data={data.personal} />
-        <About data={data.personal} />
-        <Skills data={data.skills} />
-        <Experience data={data.experience} />
-        <Projects data={data.projects} />
-        <Contact data={data.contact} />
-      </main>
-      <Footer />
+    <div className="min-h-screen bg-gray-900 text-white relative">
+      <InteractiveBackground />
+      <FloatingElements />
+      <div className="relative z-10">
+        <Header />
+        <main>
+          <Hero data={data.personal} />
+          <About data={data.personal} />
+          <Skills data={data.skills} />
+          <Experience data={data.experience} />
+          <Projects data={data.projects} />
+          <Contact data={data.contact} />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 };
