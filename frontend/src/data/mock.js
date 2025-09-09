@@ -44,8 +44,8 @@ export const mockData = {
       { name: 'Deep Learning', level: 75, category: 'AI/ML' },
       { name: 'Data Visualization', level: 85, category: 'Analytics' }
     ],
-    tools: ['NumPy', 'Matplotlib', 'Seaborn', 'React', 'Node.js', 'MongoDB', 'Express.js'],
-    soft: ['Effective Communication', 'Teamwork', 'Time Management', 'Data Management', 'Problem Solving']
+    tools: ['NumPy', 'Matplotlib', 'Seaborn', 'Pandas', 'Scikit-learn', 'TensorFlow', 'Jupyter', 'Tableau', 'Power BI'],
+    soft: ['Effective Communication', 'Teamwork', 'Time Management', 'Data Management', 'Problem Solving', 'Critical Thinking', 'Statistical Reasoning']
   },
   experience: [
     {
