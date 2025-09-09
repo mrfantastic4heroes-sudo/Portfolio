@@ -28,17 +28,17 @@ const Hero = ({ data }) => {
           {/* Content */}
           <div className="lg:w-1/2 space-y-8">
             <div className="space-y-4 animate-fadeIn">
-              <h1 className="text-5xl lg:text-7xl font-light tracking-tight">
+              <h1 className="text-5xl lg:text-7xl font-light tracking-tight heading-font">
                 <span className="text-white">Hi, I'm </span>
                 <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent font-medium">
                   {data?.name || 'Albee John'}
                 </span>
               </h1>
-              <p className="text-xl lg:text-2xl text-gray-300 font-light">
-                {data?.tagline || 'Data Science Enthusiast & Full-Stack Developer'}
+              <p className="text-xl lg:text-2xl text-gray-300 font-light heading-font">
+                {data?.tagline || 'Data Scientist & Analytics Professional'}
               </p>
-              <p className="text-lg text-gray-400 max-w-2xl leading-relaxed">
-                {data?.description || 'Passionate about leveraging technology to solve complex problems through data science, machine learning, and innovative web development.'}
+              <p className="text-lg text-gray-400 max-w-2xl leading-relaxed body-font">
+                {data?.description || 'Passionate about transforming raw data into actionable insights through advanced analytics, machine learning, and data-driven decision making.'}
               </p>
             </div>
             
