@@ -106,7 +106,7 @@ const Contact = ({ data }) => {
             Get In <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent font-medium">Touch</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Ready to collaborate on exciting projects or discuss opportunities in data science and development
+            Ready to collaborate on exciting data science projects or discuss opportunities in analytics and machine learning
           </p>
         </div>
 
