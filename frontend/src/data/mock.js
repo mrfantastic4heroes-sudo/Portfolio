@@ -1,8 +1,8 @@
 export const mockData = {
   personal: {
     name: 'Albee John',
-    tagline: 'Data Science Enthusiast & Full-Stack Developer',
-    description: 'Passionate about leveraging technology to solve complex problems through data science, machine learning, and innovative web development.',
+    tagline: 'Data Scientist & Analytics Professional',
+    description: 'Passionate about transforming raw data into actionable insights through advanced analytics, machine learning, and data-driven decision making.',
     email: 'albeejohnwwe@gmail.com',
     phone: '+91 8943785705',
     location: 'Kollam, Kerala',
