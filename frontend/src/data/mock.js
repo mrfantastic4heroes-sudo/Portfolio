@@ -36,11 +36,13 @@ export const mockData = {
   skills: {
     technical: [
       { name: 'Python', level: 90, category: 'Programming' },
-      { name: 'C Programming', level: 80, category: 'Programming' },
+      { name: 'R Programming', level: 75, category: 'Programming' },
+      { name: 'SQL', level: 85, category: 'Programming' },
       { name: 'Data Science', level: 85, category: 'Analytics' },
+      { name: 'Statistical Analysis', level: 80, category: 'Analytics' },
       { name: 'Machine Learning', level: 80, category: 'AI/ML' },
       { name: 'Deep Learning', level: 75, category: 'AI/ML' },
-      { name: 'MERN Stack', level: 70, category: 'Web Development' }
+      { name: 'Data Visualization', level: 85, category: 'Analytics' }
     ],
     tools: ['NumPy', 'Matplotlib', 'Seaborn', 'React', 'Node.js', 'MongoDB', 'Express.js'],
     soft: ['Effective Communication', 'Teamwork', 'Time Management', 'Data Management', 'Problem Solving']
