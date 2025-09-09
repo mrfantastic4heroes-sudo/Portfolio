@@ -13,7 +13,7 @@ const Projects = ({ data }) => {
             My <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent font-medium">Projects</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Showcasing technical expertise through innovative full-stack development projects
+            Showcasing technical expertise through innovative development and data science projects
           </p>
         </div>
 
