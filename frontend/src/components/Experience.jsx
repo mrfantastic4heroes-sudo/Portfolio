@@ -12,7 +12,7 @@ const Experience = ({ data }) => {
             Work <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent font-medium">Experience</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Professional journey combining consulting expertise with technical excellence
+            Professional journey combining consulting expertise with data analytics excellence
           </p>
         </div>
 
