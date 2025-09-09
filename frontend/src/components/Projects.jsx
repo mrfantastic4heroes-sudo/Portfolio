@@ -3,20 +3,27 @@ import { ExternalLink, Github, Calendar, CheckCircle, Code } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
+import ProjectFilter from './ProjectFilter';
 
 const Projects = ({ data }) => {
   return (
     <section id="projects" className="py-20 bg-gray-900">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-light text-white mb-6">
+          <h2 className="text-4xl lg:text-5xl font-light text-white mb-6 heading-font">
             My <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent font-medium">Projects</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed body-font">
             Showcasing technical expertise through innovative development and data science projects
           </p>
         </div>
 
+        {/* Interactive Project Filter */}
+        <div className="mb-16">
+          <ProjectFilter projects={data} />
+        </div>
+
+        {/* Traditional Project Display */}
         <div className="grid gap-8">
           {data?.map((project, index) => (
             <Card key={project.id || index} className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300 group overflow-hidden">
@@ -27,10 +34,10 @@ const Projects = ({ data }) => {
                     <div className="w-20 h-20 bg-gray-700/50 rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
                       <Code className="w-10 h-10 text-blue-400" />
                     </div>
-                    <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                    <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent heading-font">
                       MERN
                     </div>
-                    <div className="text-gray-400 text-sm mt-1">Full-Stack</div>
+                    <div className="text-gray-400 text-sm mt-1 body-font">Full-Stack</div>
                   </div>
                 </div>
 
@@ -39,10 +46,10 @@ const Projects = ({ data }) => {
                   <CardHeader>
                     <div className="flex items-start justify-between flex-wrap gap-4">
                       <div>
-                        <CardTitle className="text-2xl text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
+                        <CardTitle className="text-2xl text-white mb-2 group-hover:text-blue-400 transition-colors duration-300 heading-font">
                           {project.name}
                         </CardTitle>
-                        <div className="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                        <div className="flex items-center gap-4 text-sm text-gray-400 mb-4 body-font">
                           <div className="flex items-center gap-1">
                             <Calendar className="w-4 h-4" />
                             {project.period}
@@ -86,18 +93,18 @@ const Projects = ({ data }) => {
                   <CardContent className="pt-0">
                     <div className="space-y-6">
                       {/* Description */}
-                      <p className="text-gray-300 leading-relaxed text-lg">
+                      <p className="text-gray-300 leading-relaxed text-lg body-font">
                         {project.description}
                       </p>
 
                       {/* Technologies */}
                       <div>
-                        <h4 className="text-gray-200 font-medium mb-3">Technologies Used</h4>
+                        <h4 className="text-gray-200 font-medium mb-3 heading-font">Technologies Used</h4>
                         <div className="flex flex-wrap gap-2">
                           {project.technologies?.map((tech, techIndex) => (
                             <Badge 
                               key={techIndex}
-                              className="bg-blue-500/20 text-blue-300 border-blue-500/30 hover:bg-blue-500/30 transition-colors duration-200"
+                              className="bg-blue-500/20 text-blue-300 border-blue-500/30 hover:bg-blue-500/30 transition-colors duration-200 body-font"
                             >
                               {tech}
                             </Badge>
@@ -108,12 +115,12 @@ const Projects = ({ data }) => {
                       {/* Key Highlights */}
                       {project.highlights && (
                         <div>
-                          <h4 className="text-gray-200 font-medium mb-3">Key Highlights</h4>
+                          <h4 className="text-gray-200 font-medium mb-3 heading-font">Key Highlights</h4>
                           <div className="grid gap-2">
                             {project.highlights.map((highlight, highlightIndex) => (
                               <div key={highlightIndex} className="flex items-start gap-3">
                                 <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
-                                <span className="text-gray-300 text-sm leading-relaxed">{highlight}</span>
+                                <span className="text-gray-300 text-sm leading-relaxed body-font">{highlight}</span>
                               </div>
                             ))}
                           </div>
@@ -130,8 +137,8 @@ const Projects = ({ data }) => {
         {/* Future Projects Section */}
         <Card className="mt-12 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border-purple-500/30">
           <CardContent className="p-8 text-center">
-            <h3 className="text-2xl font-semibold text-white mb-4">More Projects Coming Soon</h3>
-            <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto mb-6">
+            <h3 className="text-2xl font-semibold text-white mb-4 heading-font">More Projects Coming Soon</h3>
+            <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto mb-6 body-font">
               Currently working on exciting data science and machine learning projects that showcase 
               the practical application of AI technologies in solving real-world problems.
             </p>
