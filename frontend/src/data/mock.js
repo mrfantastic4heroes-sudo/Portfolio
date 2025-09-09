@@ -6,12 +6,12 @@ export const mockData = {
     email: 'albeejohnwwe@gmail.com',
     phone: '+91 8943785705',
     location: 'Kollam, Kerala',
-    bio: `I am an aspiring learner, fascinated with the expanse of technology and the field of Computer Science. 
-    Currently pursuing expertise in Data Science and Machine Learning while maintaining strong full-stack development skills. 
-    My journey spans from academic excellence to practical implementation, with experience in consulting and complex data management.
+    bio: `I am an aspiring data scientist, fascinated with the expanse of data analytics and machine learning technologies. 
+    Currently pursuing expertise in Data Science and advanced analytics while building strong foundations in statistical analysis and predictive modeling.
+    My journey spans from academic excellence to practical implementation, with experience in consulting and complex data analysis.
     
-    I believe in continuous learning and staying updated with the latest technological advancements. My goal is to contribute 
-    to innovative projects that make a meaningful impact through technology.`,
+    I believe in the power of data to drive meaningful insights and strategic decision-making. My goal is to contribute 
+    to innovative data-driven projects that solve real-world problems through advanced analytics and machine learning applications.`,
     education: [
       {
         degree: 'B.Tech, Computer Science & Engineering',
