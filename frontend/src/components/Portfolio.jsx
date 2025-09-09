@@ -18,7 +18,7 @@ const Portfolio = () => {
     const loadData = async () => {
       setIsLoading(true);
       // Simulate loading delay
-      await new Promise(resolve => setTimeout(resolve, 800));
+      await new Promise(resolve => setTimeout(resolve, 100));
       setData(mockData);
       setIsLoading(false);
     };
