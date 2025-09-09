@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronDown, Download, ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
+import LazyImage from './LazyImage';
 
 const Hero = ({ data }) => {
   const scrollToAbout = () => {
@@ -65,10 +66,10 @@ const Hero = ({ data }) => {
           <div className="lg:w-1/2 flex justify-center">
             <div className="relative">
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-500/20 p-1 animate-float">
-                <img
+                <LazyImage
                   src="https://s3.amazonaws.com/appforest_uf/f1737011654924x871031063883914100/7fecccdc-7cd4-42f6-b095-1e7f7e1c7fdf.jpeg"
-                  alt="Albee John"
-                  className="w-full h-full object-cover rounded-full border-4 border-gray-700"
+                  alt="Albee John - Data Scientist & Analytics Professional"
+                  className="w-full h-full rounded-full border-4 border-gray-700"
                 />
               </div>
               {/* Floating elements */}
@@ -83,6 +84,7 @@ const Hero = ({ data }) => {
       <button
         onClick={scrollToAbout}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 hover:text-white transition-colors duration-300 animate-bounce"
+        aria-label="Scroll to About section"
       >
         <ChevronDown size={32} />
       </button>
