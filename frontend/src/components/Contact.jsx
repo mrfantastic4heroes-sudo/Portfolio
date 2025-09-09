@@ -28,9 +28,20 @@ const Contact = ({ data }) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Mock form submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      const result = await response.json();
       
       toast({
         title: "Message Sent Successfully!",
@@ -46,6 +57,7 @@ const Contact = ({ data }) => {
         message: ''
       });
     } catch (error) {
+      console.error('Contact form error:', error);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again.",
