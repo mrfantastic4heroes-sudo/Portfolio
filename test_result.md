@@ -327,9 +327,10 @@ metadata:
 
 test_plan:
   current_focus:
-    - "All backend API endpoints tested and working"
+    - "All frontend functionality tested and working"
+    - "Comprehensive UI/UX testing completed"
   stuck_tasks: []
-  test_all: false
+  test_all: true
   test_priority: "high_first"
 
 agent_communication:
