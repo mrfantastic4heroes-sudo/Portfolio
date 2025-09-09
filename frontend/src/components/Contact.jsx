@@ -116,7 +116,8 @@ const Contact = ({ data }) => {
             <div>
               <h3 className="text-2xl font-semibold text-white mb-6">Let's Connect</h3>
               <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                I'm always open to discussing new opportunities, innovative projects, or just having a chat about technology and data science. Feel free to reach out!
+                I'm always open to discussing new opportunities, innovative data science projects, or just having a chat 
+                about analytics, machine learning, and data-driven insights. Feel free to reach out!
               </p>
             </div>
 
