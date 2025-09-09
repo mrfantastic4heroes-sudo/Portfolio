@@ -89,5 +89,7 @@ async def mark_message_read(message_id: str):
             raise HTTPException(status_code=404, detail="Message not found")
         
         return {"message": "Message marked as read"}
+    except HTTPException:
+        raise  # Re-raise HTTPException without modification
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
