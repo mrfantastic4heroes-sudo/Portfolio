@@ -94,15 +94,15 @@ const Experience = ({ data }) => {
           <CardContent className="p-8 text-center">
             <h3 className="text-2xl font-semibold text-white mb-4">Looking Forward</h3>
             <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto">
-              Seeking challenging roles that combine my passion for data science and machine learning 
-              with practical business applications. Ready to contribute to innovative projects that 
-              leverage technology to solve real-world problems.
+              Seeking challenging roles in data science and analytics that leverage my passion for extracting insights 
+              from complex datasets. Ready to contribute to data-driven organizations that use analytics to solve 
+              real-world problems and drive strategic decision-making.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-2">
               <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">Data Science</Badge>
               <Badge className="bg-cyan-500/20 text-cyan-300 border-cyan-500/30">Machine Learning</Badge>
-              <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Full-Stack Development</Badge>
-              <Badge className="bg-purple-500/20 text-purple-300 border-purple-500/30">AI Applications</Badge>
+              <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Statistical Analysis</Badge>
+              <Badge className="bg-purple-500/20 text-purple-300 border-purple-500/30">Data Analytics</Badge>
             </div>
           </CardContent>
         </Card>
