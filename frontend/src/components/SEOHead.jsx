@@ -1,0 +1,98 @@
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+
+const SEOHead = ({ 
+  title = "Albee John - Data Scientist & Analytics Professional",
+  description = "Professional Data Science portfolio showcasing expertise in Python, R, Machine Learning, Statistical Analysis, and Data Visualization. Available for data science opportunities.",
+  keywords = "Data Scientist, Analytics Professional, Python, R Programming, Machine Learning, Statistical Analysis, Data Visualization, Portfolio, Albee John",
+  url = "https://albeejohn.com",
+  image = "https://albeejohn.com/og-image.jpg",
+  type = "website"
+}) => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Albee John",
+    "jobTitle": "Data Scientist & Analytics Professional",
+    "description": "Aspiring data scientist with expertise in Python, R, Machine Learning, and Statistical Analysis",
+    "url": url,
+    "image": image,
+    "sameAs": [
+      "https://linkedin.com/in/albeejohn",
+      "https://github.com/albeejohn"
+    ],
+    "knowsAbout": [
+      "Data Science",
+      "Python Programming",
+      "R Programming", 
+      "Machine Learning",
+      "Statistical Analysis",
+      "Data Visualization",
+      "MongoDB",
+      "SQL"
+    ],
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "St. Thomas College Of Engineering & Technology"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kollam",
+      "addressRegion": "Kerala",
+      "addressCountry": "India"
+    },
+    "email": "albeejohnwwe@gmail.com",
+    "telephone": "+91 8943785705"
+  };
+
+  return (
+    <Helmet>
+      {/* Basic Meta Tags */}
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+      <meta name="author" content="Albee John" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href={url} />
+
+      {/* Open Graph Tags */}
+      <meta property="og:type" content={type} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={url} />
+      <meta property="og:image" content={image} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:site_name" content="Albee John Portfolio" />
+      <meta property="og:locale" content="en_US" />
+
+      {/* Twitter Card Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
+      <meta name="twitter:creator" content="@albeejohn" />
+
+      {/* Additional SEO Tags */}
+      <meta name="theme-color" content="#1f2937" />
+      <meta name="msapplication-TileColor" content="#1f2937" />
+      <meta name="application-name" content="Albee John Portfolio" />
+      
+      {/* Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
+      
+      {/* Preconnect to external domains */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+      
+      {/* DNS Prefetch */}
+      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+      <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    </Helmet>
+  );
+};
+
+export default SEOHead;
