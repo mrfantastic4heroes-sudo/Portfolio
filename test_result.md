@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Test the Albee John Portfolio backend API thoroughly including all endpoints, data validation, error handling, and data verification"
+user_problem_statement: "Perform comprehensive frontend testing for Albee John's Data Science Portfolio website including page loading, navigation, content verification, contact form, interactive elements, responsive design, visual elements, and performance testing"
 
 backend:
   - task: "Root API Endpoint"
