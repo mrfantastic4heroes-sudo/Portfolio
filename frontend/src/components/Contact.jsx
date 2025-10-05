@@ -29,25 +29,38 @@ const Contact = ({ data }) => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contact`, {
+      const MAKE_WEBHOOK_URL = "https://hook.eu2.make.com/06eet1pvfeivfzboi2mdcw5cu67p";
+      
+      const dataToSend = {
+          name: formData.name,
+          email: formData.email, 
+          subject: formData.subject,
+          message: formData.message 
+      };
+
+      const response = await fetch(MAKE_WEBHOOK_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(dataToSend),
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-      }
-
-      const result = await response.json();
-      
       toast({
         title: "Message Sent Successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-        duration: 5000,
+        description: "Your message is being processed by the automation system.", duration: 5000,
       });
+
+    } catch (error) {
+      console.error('Submission Error:', error);
+      toast({
+        title: "Submission Failed",
+        description: "An error occurred while trying to send the message. Please check the console.", duration: 5000, variant: "destructive"
+      });
+      
+    } finally {
+        setIsSubmitting(false);
+    }
 
       // Reset form
       setFormData({
